@@ -2,13 +2,19 @@
 var emailUsr = prompt('Inserisci la tua e-mail');
 
 //Lista allowed user
-var allowUsr = ['email1', 'email2', 'email3'];
+var allowList = ['email1', 'email2', 'email3'];
 
-for(var i = 0; i < allowUsr.length; i++){
-  //Verify email
-  if (emailUsr === allowUsr[i]) {
-    alert('Ok!')
-  } else {
-    alert ('Accesso negato.')
+var allowUsr = false;
+
+//Verify email
+for(var i = 0; i <= allowList.length - 1; i++){
+  if (emailUsr === allowList[i]) {
+    allowUsr = true;
   }
+}
+
+if (allowUsr){
+  alert('Ok!')
+} else {
+  alert('Accesso negato.')
 }
