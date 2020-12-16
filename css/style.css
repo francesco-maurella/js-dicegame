@@ -88,7 +88,7 @@ footer {
   color: #808080;
   padding-top: 10px;
   border-top: 1px solid #808080;
-  margin-top: 25px;
+  margin: 25px 0;
 }
 
 #dice, #dice-one, #dice-two, #result, footer {
