@@ -15,10 +15,17 @@
   text-decoration: none;
 }
 
+/* Utility and common CSS */
 .flx {
   display: flex;
 }
 
+#dice, #dice-one, #dice-two, #result, footer {
+  text-align: center;
+}
+/* / Utility and common CSS */
+
+/* INTESTAZIONE */
 header, .title {
   flex-direction: column;
   align-items: center;
@@ -42,7 +49,9 @@ header, .title {
 .title h2 {
   font-size: 22px;
 }
+/* / INTESTAZIONE */
 
+/* CORPO PRINCIPALE */
 #dice {
   width: 500px;
   position: relative;
@@ -73,6 +82,25 @@ header, .title {
   padding: 25px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
   margin: 50px 0;
+  transition: 0.3s;
+}
+
+#button:hover {
+  transform: scale(1.06);
+}
+
+#button:active {
+  transform: scale(0.85);
+}
+
+
+#dice-one img, #dice-two img {
+  margin-bottom: 25px;
+  animation: rotate 0.5s ease-in-out;
+}
+
+@keyframes rotate {
+  from { transform: rotate(360deg); }
 }
 
 #result {
@@ -82,7 +110,9 @@ header, .title {
   text-transform: uppercase;
   margin-top: 20px;
 }
+/* / CORPO PRINCIPALE */
 
+/* FOOTER */
 footer {
   font-size: 12px;
   color: #808080;
@@ -90,7 +120,4 @@ footer {
   border-top: 1px solid #808080;
   margin: 25px 0;
 }
-
-#dice, #dice-one, #dice-two, #result, footer {
-  text-align: center;
-}
+/* / FOOTER */

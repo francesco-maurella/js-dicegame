@@ -2,15 +2,15 @@
 alert('Benvenuto su TWO OR MORE.\nEffettua l\'accesso per iniziare a giocare.');
 
 // Email Request
-var emailUsr = prompt('Inserisci la tua e-mail');
+var emailUsr = prompt('Inserisci la tua e-mail\n(Suggerimento: user2@email.com)');
 
 //Allowed list user
-var allowList = ['user1@email.com', 'user1@email.com', 'user1@email.com'];
+var allowList = ['user1@email.com', 'user2@email.com', 'user3@email.com'];
 
 var allowUsr;
 
 //Verify Email
-for(var i = 0; i <= allowList.length - 1; i++){
+for(var i = 0; i <= allowList.length - 1 && !allowUsr; i++){
   if (emailUsr === allowList[i]) {
     allowUsr = true;
   }
