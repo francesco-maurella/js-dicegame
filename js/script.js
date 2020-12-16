@@ -2,10 +2,10 @@
 alert('Benvenuto su TWO OR MORE.\nEffettua l\'accesso per iniziare a giocare.');
 
 // Email Request
-var emailUsr = prompt('Inserisci la tua e-mail\n(Suggerimento: user2@email.com)');
+var emailUsr = prompt('Inserisci la tua e-mail\n(Suggerimento: user02@gmail.com)');
 
 //Allowed list user
-var allowList = ['user1@email.com', 'user2@email.com', 'user3@email.com'];
+var allowList = ['user01@gmail.com', 'user02@gmail.com', 'user03@gmail.com', 'user04@gmail.com'];
 
 var allowUsr;
 

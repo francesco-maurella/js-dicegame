@@ -5,7 +5,7 @@
 }
 
 .container {
-  max-width: 800px;
+  max-width: 500px;
   margin: auto;
   font-family: 'Abril Fatface';
 }
@@ -36,7 +36,7 @@ header, .title {
 }
 
 .logo img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .title h1 {
@@ -53,25 +53,8 @@ header, .title {
 
 /* CORPO PRINCIPALE */
 #dice {
-  width: 500px;
   position: relative;
   margin: auto;
-}
-
-.launch {
-  height: 690px;
-  background: url('../img/00-launch.jpg') center bottom no-repeat;
-  background-size: contain;
-}
-
-.launch #game{
-  display: none;
-}
-
-.launched #game{
-  height: 100%;
-  align-items: flex-end;
-  justify-content: space-between;
 }
 
 #button {
@@ -93,8 +76,28 @@ header, .title {
   transform: scale(0.85);
 }
 
+.launch {
+  height: 690px;
+  background: url('../img/00-launch.jpg') center bottom no-repeat;
+  background-size: contain;
+}
+
+.launch #game{
+  display: none;
+}
+
+.launched #game{
+  height: 100%;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+#dice-one, #dice-two {
+  width: 42%;
+}
 
 #dice-one img, #dice-two img {
+  max-width: 100%;
   margin-bottom: 25px;
   animation: rotate 0.5s ease-in-out;
 }
