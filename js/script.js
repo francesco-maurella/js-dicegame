@@ -1,20 +1,66 @@
-// Email user
+// Welecome message
+alert('Benvenuto su TWO OR MORE.\nEffettua l\'accesso per iniziare a giocare.');
+
+// Email Request
 var emailUsr = prompt('Inserisci la tua e-mail');
 
-//Lista allowed user
-var allowList = ['email1', 'email2', 'email3'];
+//Allowed list user
+var allowList = ['user1@email.com', 'user1@email.com', 'user1@email.com'];
 
-var allowUsr = false;
+var allowUsr;
 
-//Verify email
+//Verify Email
 for(var i = 0; i <= allowList.length - 1; i++){
   if (emailUsr === allowList[i]) {
     allowUsr = true;
   }
 }
 
+//Result verification
 if (allowUsr){
-  alert('Ok!')
+  alert('Accesso effettuato.\nPuoi iniziare a giocare!');
 } else {
-  alert('Accesso negato.')
+  alert('Accesso negato.');
+  location.reload();
 }
+
+// Dices vars
+var dice = document.getElementById('dice');
+var button = document.getElementById('button');
+var playerUsr;
+var playerPc;
+
+// Launch dice funtion
+button.addEventListener('click',
+function() {
+    playerUsr = Math.floor((Math.random() * 6) + 1); // user dice
+    playerPc = Math.floor((Math.random() * 6) + 1); // pc dice
+
+    dice.className = 'launched';  // new class after funtion
+
+    // dices in html
+    var diceOne = document.getElementById('dice-one');
+    var diceTwo = document.getElementById('dice-two');
+
+    // result status
+    diceOne.innerHTML = '<img src="img/0' + playerUsr + '.jpg"><br>Tu';
+    diceTwo.innerHTML = '<img src="img/0' + playerPc + '.jpg"><br>Avversario';
+
+    var result = document.getElementById('result');
+
+    // result message
+    if (playerUsr > playerPc) {
+      result.innerHTML = 'Hai Vinto!<br>&#128512;'
+      diceOne.style.opacity = '1';
+      diceTwo.style.opacity = '1';
+    } else if (playerUsr < playerPc) {
+      diceOne.style.opacity = '0.4';
+      diceTwo.style.opacity = '1';
+      result.innerHTML = 'Hai Perso.<br>&#128532'
+    } else if (playerUsr === playerPc) {
+      diceOne.style.opacity = '0.8';
+      diceTwo.style.opacity = '0.8';
+      result.innerHTML = 'Hai Pareggiato.<br>&#128528'
+    }
+  }
+);
