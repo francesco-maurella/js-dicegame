@@ -48,18 +48,16 @@ function() {
 
     var result = document.getElementById('result');
 
-    // result message
+    diceOne.style.opacity = '1';
+    diceTwo.style.opacity = '1';
+
     if (playerUsr > playerPc) {
       result.innerHTML = 'Hai Vinto!<br>&#128512;'
-      diceOne.style.opacity = '1';
       diceTwo.style.opacity = '0.55';
     } else if (playerUsr < playerPc) {
       diceOne.style.opacity = '0.55';
-      diceTwo.style.opacity = '1';
       result.innerHTML = 'Hai Perso.<br>&#128532'
     } else if (playerUsr === playerPc) {
-      diceOne.style.opacity = '1';
-      diceTwo.style.opacity = '1';
       result.innerHTML = 'Hai Pareggiato.<br>&#128528'
     }
   }
