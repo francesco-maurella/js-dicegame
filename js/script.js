@@ -22,17 +22,23 @@ function() {
 
     let result = document.getElementById('result');
 
+    result.innerHTML = 'Loading<br />...'
     diceOne.style.opacity = '1';
     diceTwo.style.opacity = '1';
 
-    if (playerUsr > playerPc) {
-      result.innerHTML = 'Hai Vinto!<br>&#128512;'
-      diceTwo.style.opacity = '0.55';
-    } else if (playerUsr < playerPc) {
-      diceOne.style.opacity = '0.55';
-      result.innerHTML = 'Hai Perso.<br>&#128532'
-    } else if (playerUsr === playerPc) {
-      result.innerHTML = 'Hai Pareggiato.<br>&#128528'
-    }
+    setTimeout(function(){
+
+      if (playerUsr > playerPc) {
+        result.innerHTML = 'Hai Vinto!<br>&#128512;'
+        diceTwo.style.opacity = '0.55';
+      } else if (playerUsr < playerPc) {
+        diceOne.style.opacity = '0.55';
+        result.innerHTML = 'Hai Perso.<br>&#128532'
+      } else if (playerUsr === playerPc) {
+        result.innerHTML = 'Hai Pareggiato.<br>&#128528'
+      }
+
+    }, 400)
+
   }
 );
